@@ -203,3 +203,7 @@ CREATE src/app/welcome/welcome.component.css (0 bytes)
 UPDATE src/app/app.module.ts (400 bytes)
 
 
+step 23
+
+provider use in DI in angular
+component < module < app ? < ?
