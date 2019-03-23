@@ -231,3 +231,4 @@ CREATE src/app/service/hardcoded-authentication.service.spec.ts (419 bytes)
 CREATE src/app/service/hardcoded-authentication.service.ts (152 bytes)
 
 
+end of section 3
