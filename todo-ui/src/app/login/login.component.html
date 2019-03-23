@@ -3,8 +3,10 @@
 </p>
 
 
-Username : <input type="text" name="username"/><br>
-Password : <input type="text" name="password"/><br>
+Username :
+<input type="text" name="username" value="{{username}}"/><br>
+Password :
+<input type="text" name="password" value="{{password}}"/><br>
 
 <!--<button name="submit" type="submit" value="Login"/>-->
-<button>Login</button>
+<button (click)=handleLogin()>Login</button>
