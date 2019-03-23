@@ -2,7 +2,7 @@
   login works!
 </p>
 
-
+<small *ngIf='invalidLogin'>{{errorMessage}}</small><br>
 Username :
 <!--Binding from ts to html-->
 <!--<input type="text" name="username" value="{{username}}"/><br>-->
