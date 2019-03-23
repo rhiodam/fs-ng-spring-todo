@@ -1,34 +1,34 @@
-<p>
-  list-todos works!
-</p>
-<br>
-
-<table border="1">
-  <caption>My Todo's</caption>
-  <thead>
-  <tr>
-    <th>id</th>
-    <th>description</th>
-    <th>is it done?</th>
-    <th>target date</th>
-  </tr>
-  </thead>
-  <tbody>
-  <!--<tr>-->
+<h1>My Todo's</h1>
+<div class="container">
+  <table class="table table-responsive">
+    <!--<caption>My Todo's</caption>-->
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>description</th>
+      <th>is it done?</th>
+      <th>target date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--<tr>-->
     <!--<td>{{todo.id}}</td>-->
     <!--<td>{{todo.description}}</td>-->
-  <!--</tr> -->
+    <!--</tr> -->
 
-  <!--in java-->
-  <!--for (Todos todo: todos){}-->
-  <!--instead we use ng directive-->
-  <tr *ngFor="let todo of todos">
-    <td>{{todo.id}}</td>
-    <td>{{todo.description}}</td>
-    <td>{{todo.targetDate | date}}</td>
-    <td>{{todo.done}}</td>
-    <td><a href="">delete</a></td>
-    <td><a href="">edit</a></td>
-  </tr>
-  </tbody>
-</table>
+    <!--in java-->
+    <!--for (Todos todo: todos){}-->
+    <!--instead we use ng directive-->
+    <tr *ngFor="let todo of todos">
+      <td>{{todo.id}}</td>
+      <td>{{todo.description}}</td>
+      <td>{{todo.targetDate | date}}</td>
+      <td>{{todo.done}}</td>
+      <td><a href="">delete</a></td>
+      <td><a href="">edit</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

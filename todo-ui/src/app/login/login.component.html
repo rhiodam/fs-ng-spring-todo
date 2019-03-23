@@ -1,15 +1,16 @@
-<p>
-  login works!
-</p>
+<h1>Login</h1>
+<div class="container">
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+  <small></small><br>
+  Username :
+  <!--Binding from ts to html-->
+  <!--<input type="text" name="username" value="{{username}}"/><br>-->
+  <!--2 way data Binding-->
+  <input class="text-primary" type="text" name="username" [(ngModel)]="username"><br>
+  Password :
+  <input class="text-primary" type="password" name="password" [(ngModel)]="password"/><br>
 
-<small *ngIf='invalidLogin'>{{errorMessage}}</small><br>
-Username :
-<!--Binding from ts to html-->
-<!--<input type="text" name="username" value="{{username}}"/><br>-->
-<!--2 way data Binding-->
-<input type="text" name="username" [(ngModel)]="username"><br>
-Password :
-<input type="password" name="password" [(ngModel)]="password"/><br>
+  <!--<button name="submit" type="submit" value="Login"/>-->
+  <button (click)=handleLogin() class="btn btn-primary">Login</button>
 
-<!--<button name="submit" type="submit" value="Login"/>-->
-<button (click)=handleLogin()>Login</button>
+</div>
