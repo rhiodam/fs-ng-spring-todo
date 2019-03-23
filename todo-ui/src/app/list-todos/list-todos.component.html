@@ -9,6 +9,8 @@
   <tr>
     <th>id</th>
     <th>description</th>
+    <th>is it done?</th>
+    <th>target date</th>
   </tr>
   </thead>
   <tbody>
@@ -23,6 +25,10 @@
   <tr *ngFor="let todo of todos">
     <td>{{todo.id}}</td>
     <td>{{todo.description}}</td>
+    <td>{{todo.targetDate | date}}</td>
+    <td>{{todo.done}}</td>
+    <td><a href="">delete</a></td>
+    <td><a href="">edit</a></td>
   </tr>
   </tbody>
 </table>
