@@ -222,3 +222,12 @@ future
 - spring boot
 - spring security
 - etc
+
+
+step 31
+
+D:\Users\rhiodam\fullstack\spring ng\fs-ng-spring-todo\todo-ui>ng g s service/hardcodedAuthentication
+CREATE src/app/service/hardcoded-authentication.service.spec.ts (419 bytes)
+CREATE src/app/service/hardcoded-authentication.service.ts (152 bytes)
+
+
