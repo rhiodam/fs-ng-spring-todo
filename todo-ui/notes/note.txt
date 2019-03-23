@@ -207,3 +207,18 @@ step 23
 
 provider use in DI in angular
 component < module < app ? < ?
+
+
+
+step 25
+
+future
+
+- no navigation menu and footer
+- no security for menus
+- hardcoded login in the todolist
+- formatting using bootstrap css
+- remaining functionality CRUD
+- spring boot
+- spring security
+- etc
