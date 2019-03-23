@@ -8,6 +8,7 @@
 // here we import a class/method from angular
 // import org.springframework.boot.SpringApplication;
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 // here we import from our custome component
 // import {AppComponent} from '../app.component';
@@ -26,6 +27,7 @@ export class WelcomeComponent implements OnInit {
 
   // JS
   message = 'Some Welcome Message';
+  name = '';
 
   // TS
   // message :  string = 'Some Welcome Message';
@@ -34,9 +36,14 @@ export class WelcomeComponent implements OnInit {
   // private String message = 'Some Welcome Message';
 
   // public WelcomeComponent()
-  constructor() { }
+  // ActivatedRoute
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
+
+    // console.log(this.message);
+    console.log(this.route.snapshot.params['name']);
+    this.name = this.route.snapshot.params['name'];
   }
 
 }

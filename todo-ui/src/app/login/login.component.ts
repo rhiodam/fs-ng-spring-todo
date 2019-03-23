@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     console.log('username : ' + this.username + ' password : ' + this.password);
     if (this.username === 'rhioda' && this.password === 'muthie') {
 
-      this.router.navigate(['welcome']);
+      this.router.navigate(['welcome',this.username]);
       // redirect to welcome comp
       this.invalidLogin = false;
     } else {
