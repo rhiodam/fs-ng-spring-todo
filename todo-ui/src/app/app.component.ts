@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-ui';
+  message = "Hey it's a to todo apps";
+  date = new Date();
 }
