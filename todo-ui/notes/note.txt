@@ -193,5 +193,13 @@ Error: Port 4200 is already in use. Use '--port' to specify a different port.
     at process._tickCallback (internal/process/next_tick.js:63:19)
 
 
+step 10
+
+D:\Users\rhiodam\fullstack\spring ng\fs-ng-spring-todo\todo-ui>ng g c welcome
+CREATE src/app/welcome/welcome.component.html (26 bytes)
+CREATE src/app/welcome/welcome.component.spec.ts (635 bytes)
+CREATE src/app/welcome/welcome.component.ts (273 bytes)
+CREATE src/app/welcome/welcome.component.css (0 bytes)
+UPDATE src/app/app.module.ts (400 bytes)
 
 
