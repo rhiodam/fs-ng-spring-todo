@@ -1,0 +1,28 @@
+<p>
+  list-todos works!
+</p>
+<br>
+
+<table border="1">
+  <caption>My Todo's</caption>
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!--<tr>-->
+    <!--<td>{{todo.id}}</td>-->
+    <!--<td>{{todo.description}}</td>-->
+  <!--</tr> -->
+
+  <!--in java-->
+  <!--for (Todos todo: todos){}-->
+  <!--instead we use ng directive-->
+  <tr *ngFor="let todo of todos">
+    <td>{{todo.id}}</td>
+    <td>{{todo.description}}</td>
+  </tr>
+  </tbody>
+</table>
