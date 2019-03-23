@@ -145,6 +145,8 @@ Linting "todo-ui-e2e"...
 
 All files pass linting.
 
+create dist foldder that we can deploy to web server
+
 PS D:\Users\rhiodam\fullstack\spring ng\fs-ng-spring-todo\todo-ui> ng build
  93% after chunk asset optimization SourceMapDevToolPlugin es2015-polyfills.js generate S
  93% after chunk asset optimization SourceMapDevToolPlugin polyfills.js generate SourceMa
@@ -162,6 +164,33 @@ chunk {styles} styles.js, styles.js.map (styles) 16.3 kB [initial] [rendered]
 chunk {vendor} vendor.js, vendor.js.map (vendor) 3.19 MB [initial] [rendered]
 
 
+
+PS D:\Users\rhiodam\fullstack\spring ng\fs-ng-spring-todo\todo-ui> ng test
+ 11% building 10/10 modules 0 active23 03 2019 20:27:25.972:WARN [karma]: No captured bro
+wser, open http://localhost:9876/
+23 03 2019 20:27:26.021:INFO [karma-server]: Karma v4.0.1 server started at http://0.0.0.
+0:9876/
+23 03 2019 20:27:26.022:INFO [launcher]: Launching browsers Chrome with concurrency unlim
+ited
+23 03 2019 20:27:26.042:INFO [launcher]: Starting browser Chrome
+ 93% after chunk asset optimization SourceMapDevToolPlugin polyfills.js generate SourceMa
+23 03 2019 20:28:15.407:WARN [karma]: No captured browser, open http://localhost:9876/
+23 03 2019 20:28:23.710:INFO [Chrome 73.0.3683 (Windows 8.0.0)]: Connected on socket x0QM
+gVExez5uM0NNAAAA with id 90913301
+Chrome 73.0.3683 (Windows 8.0.0): Executed 3 of 3 SUCCESS (6.968 secs / 5.999 secs)
+TOTAL: 3 SUCCESS
+TOTAL: 3 SUCCESS
+
+PS D:\Users\rhiodam\fullstack\spring ng\fs-ng-spring-todo\todo-ui> ng e2e
+Port 4200 is already in use. Use '--port' to specify a different port.
+Error: Port 4200 is already in use. Use '--port' to specify a different port.
+    at Server.server.once (D:\Users\rhiodam\fullstack\spring ng\fs-ng-spring-todo\todo-ui
+\node_modules\@angular-devkit\build-angular\src\angular-cli-files\utilities\check-port.js
+:27:28)
+    at Object.onceWrapper (events.js:273:13)
+    at Server.emit (events.js:182:13)
+    at emitErrorNT (net.js:1313:8)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
 
 
 
