@@ -2,6 +2,7 @@ package com.rhiodamuthie.restfulws.rest;
 
 import com.rhiodamuthie.restfulws.model.HelloWorldBean;
 //import com.rhiodamuthie.restfulws.repository.HelloWorldBeanRepository;
+import com.rhiodamuthie.restfulws.repository.HelloWorldBeanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,9 @@ public class HelloWorldController {
 
 //    @Autowired
     private HelloWorldBean helloWorldBean;
+
+    @Autowired
+    private HelloWorldBeanRepository helloWorldBeanRepository;
 
 //    new
 
@@ -38,7 +42,9 @@ public class HelloWorldController {
 
     @GetMapping(path = "/hello-world-bean")
     public HelloWorldBean helloWorldBean(){
-        return new HelloWorldBean("Some message");
+        HelloWorldBean bean = new HelloWorldBean("Some message");
+        helloWorldBeanRepository.save(bean);
+        return bean;
     }
 
 //    Iseng2
@@ -63,6 +69,7 @@ public class HelloWorldController {
 //        return new HelloWorldBean(1L , String.format("Hello world, %s", name));
         HelloWorldBean bean = new HelloWorldBean(String.format("Hello world, %s", name));
         bean.setMessage(String.format("Hello world, %s", name));
+        helloWorldBeanRepository.save(bean);
         return bean;
 //        return new HelloWorldBean(1L , "Hello world, " + name);
     }

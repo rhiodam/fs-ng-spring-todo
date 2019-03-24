@@ -13,8 +13,8 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "HelloWorldBean")
+//@Entity
+//@Table(name = "HelloWorldBean2")
 public class HelloWorldBean2 {
 
     @Id
@@ -26,6 +26,6 @@ public class HelloWorldBean2 {
     @Column(name = "created_at")
     private Date createdAt = new Date();
 
-    public HelloWorldBean2(long id, String message) {
-    }
+//    public HelloWorldBean2(long id, String message) {
+//    }
 }

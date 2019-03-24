@@ -15,10 +15,18 @@ import java.util.List;
 public class TodoService {
 
     private static List<Todo> todos = new ArrayList();
-    private static int idCounter = 0;
+    private static Long idCounter = 0L;
 
     static {
-        todos.add(new Todo(++idCounter , "rhioda" , "Learn Anguar" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
 
+    }
+
+    public List<Todo> findAll(){
+        return todos;
     }
 }

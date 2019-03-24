@@ -15,11 +15,13 @@ export class WelcomeDataService {
     // console.log("Hello");
 
   }
+
   excuteHelloWorldBeanServiceWithPathVariable(name){
     return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/${name}`)
     // console.log("Hello");
 
   }
+
 }
 
 export class HelloWorldBean {

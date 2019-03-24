@@ -17,12 +17,14 @@ export class Todo {
 })
 export class ListTodosComponent implements OnInit {
 
-  todos = [
-    new Todo(1, 'Learn Angular', false, new Date()),
-    new Todo(2, 'Learn Angular 2', false, new Date()),
-    new Todo(3, 'Learn Angular 3', false, new Date()),
-    new Todo(4, 'Learn Angular 4', false, new Date())
-  ]
+  todos = Todo[]
+
+  //todos3 = [
+  //  new Todo(1, 'Learn Angular', false, new Date()),
+  //  new Todo(2, 'Learn Angular 2', false, new Date()),
+  //  new Todo(3, 'Learn Angular 3', false, new Date()),
+  //  new Todo(4, 'Learn Angular 4', false, new Date())
+  //]
   todos2 = [
     {
       id: 1,
