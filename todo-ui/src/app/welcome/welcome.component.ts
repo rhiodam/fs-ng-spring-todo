@@ -9,6 +9,7 @@
 // import org.springframework.boot.SpringApplication;
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {WelcomeDataService} from "../service/data/welcome-data.service";
 
 // here we import from our custome component
 // import {AppComponent} from '../app.component';
@@ -37,7 +38,10 @@ export class WelcomeComponent implements OnInit {
 
   // public WelcomeComponent()
   // ActivatedRoute
-  constructor(private route:ActivatedRoute) { }
+  constructor(
+    private route:ActivatedRoute,
+    private welcomeService:WelcomeDataService
+  ) { }
 
   ngOnInit() {
 
@@ -46,4 +50,10 @@ export class WelcomeComponent implements OnInit {
     this.name = this.route.snapshot.params['name'];
   }
 
+  getWelcomeMessage() {
+    // this.welcomeService.excuteHelloWorldBeanService();
+    // this.welcomeService.excuteHelloWorldBeanService();
+    // console.log("inside getWelcomeMessage method")
+    console.log(this.welcomeService.excuteHelloWorldBeanService());
+  }
 }
