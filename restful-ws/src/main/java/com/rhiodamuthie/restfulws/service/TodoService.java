@@ -18,15 +18,37 @@ public class TodoService {
     private static Long idCounter = 0L;
 
     static {
-        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
-        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
-        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
-        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
-        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular 1" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular 2" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular 3" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular 4" , new Date() , false));
+        todos.add(new Todo(++idCounter , "rhioda" , "Learn Angular 5" , new Date() , false));
 
     }
 
     public List<Todo> findAll(){
         return todos;
     }
+
+    public Todo deleteById(long id){
+        Todo todo = findById(id);
+
+        if (todo == null) return null;
+
+        if (todos.remove(todo)){
+            return todo;
+        }
+        return null;
+    }
+
+    private Todo findById(long id) {
+        for (Todo todo: todos){
+            if (todo.getId() == id){
+                return todo;
+            }
+        }
+        return null;
+    }
+
+
 }

@@ -11,11 +11,9 @@ export class TodoDataService {
     private http:HttpClient
   ) { }
 
-
-  excuteHelloWorldBeanServiceWithPathVariable(username){
+  retrieveAllTodos(username){
     return this.http.get<Todo[]>(`http://localhost:8080/user/${username}/todo`)
-    // console.log("Hello");
-
+     console.log("retrieveAllTodos todo data service");
   }
 
 
