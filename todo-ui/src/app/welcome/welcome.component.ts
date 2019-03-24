@@ -28,6 +28,7 @@ export class WelcomeComponent implements OnInit {
 
   // JS
   message = 'Some Welcome Message';
+  messageFromService :string;
   name = '';
 
   // TS
@@ -55,5 +56,44 @@ export class WelcomeComponent implements OnInit {
     // this.welcomeService.excuteHelloWorldBeanService();
     // console.log("inside getWelcomeMessage method")
     console.log(this.welcomeService.excuteHelloWorldBeanService());
+
+    // async
+    this.welcomeService.excuteHelloWorldBeanService().subscribe(
+      // response =>console.log(response.message)
+      response =>this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
+
+    console.log("after use service");
+  }
+  getWelcomeMessageWithPathVariable() {
+    // this.welcomeService.excuteHelloWorldBeanService();
+    // this.welcomeService.excuteHelloWorldBeanService();
+    // console.log("inside getWelcomeMessage method")
+    console.log(this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable(this.name));
+
+    // async
+    this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable(this.name).subscribe(
+      // response =>console.log(response.message)
+      response =>this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
+
+    console.log("after use service");
+  }
+
+  handleSuccessfulResponse(response){
+    this.messageFromService = response.message;
+    console.log(response);
+    console.log(response.message);
+  }
+
+  private handleErrorResponse(error: any) {
+    console.log(error);
+    console.log(error.error.message);
+    this.messageFromService = error.error.message;
   }
 }
+
+
+

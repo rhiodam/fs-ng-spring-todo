@@ -11,8 +11,24 @@ export class WelcomeDataService {
   ) { }
 
   excuteHelloWorldBeanService(){
-    return this.http.get('http://localhost:8080/hello-world-bean')
+    return this.http.get<HelloWorldBean>('http://localhost:8080/hello-world-bean')
     // console.log("Hello");
 
   }
+  excuteHelloWorldBeanServiceWithPathVariable(name){
+    return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/${name}`)
+    // console.log("Hello");
+
+  }
+}
+
+export class HelloWorldBean {
+  constructor(
+    // public id : number,
+    // public date: date,
+    public message : string
+  ){
+
+  }
+
 }

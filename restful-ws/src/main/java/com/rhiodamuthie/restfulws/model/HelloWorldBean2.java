@@ -14,20 +14,18 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TODO")
-public class Todo {
+@Table(name = "HelloWorldBean")
+public class HelloWorldBean2 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String username;
+    private String message;
 
-    private String description;
+    @Column(name = "created_at")
+    private Date createdAt = new Date();
 
-    @Column(name = "targetDate")
-    private Date targetDate = new Date();
-
-    private boolean isDone;
-
+    public HelloWorldBean2(long id, String message) {
+    }
 }

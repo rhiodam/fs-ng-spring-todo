@@ -5,24 +5,36 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by W on 3/24/2019.
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Entity
+//@Table(name = "HelloWorldBean")
 public class HelloWorldBean {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
 
     private String message;
 
+//    @Column(name = "created_at")
+//    private Date createdAt = new Date();
+
+    public HelloWorldBean(String message) {
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

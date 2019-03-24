@@ -232,3 +232,11 @@ CREATE src/app/service/hardcoded-authentication.service.ts (152 bytes)
 
 
 end of section 3
+
+
+
+step 52
+
+Access to XMLHttpRequest at 'http://localhost:8080/hello-world-bean'
+from origin 'http://localhost:4200' has been
+blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
