@@ -1,7 +1,6 @@
 package com.rhiodamuthie.restfulws.rest;
 
 import com.rhiodamuthie.restfulws.model.HelloWorldBean;
-//import com.rhiodamuthie.restfulws.repository.HelloWorldBeanRepository;
 import com.rhiodamuthie.restfulws.repository.HelloWorldBeanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
