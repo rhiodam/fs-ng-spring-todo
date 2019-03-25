@@ -87,8 +87,8 @@ export class ListTodosComponent implements OnInit {
 
   updateTodo(id){
 
-    console.log(id);
-    this.router.navigate(['todos' ,id])
+    console.log('Update Todo with id : ' + id);
+    this.router.navigate(['todos' ,id]);
   //   this.todoService.updateTodo('rhioda',id).subscribe(
   //     response => {
   //       console.log(response);

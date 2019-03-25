@@ -240,3 +240,32 @@ step 52
 Access to XMLHttpRequest at 'http://localhost:8080/hello-world-bean'
 from origin 'http://localhost:4200' has been
 blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+
+step 64
+
+
+TodoComponent.html:10 ERROR TypeError: Cannot read property 'description' of undefined
+    at Object.eval [as updateDirectives] (TodoComponent.html:15)
+    at Object.debugUpdateDirectives [as updateDirectives] (core.js:23910)
+    at checkAndUpdateView (core.js:23306)
+    at callViewAction (core.js:23547)
+    at execComponentViewsAction (core.js:23489)
+    at checkAndUpdateView (core.js:23312)
+    at callViewAction (core.js:23547)
+    at execEmbeddedViewsAction (core.js:23510)
+    at checkAndUpdateView (core.js:23307)
+    at callViewAction (core.js:23547)
+
+
+
+
+
+
+
+
+
+
+
+
+

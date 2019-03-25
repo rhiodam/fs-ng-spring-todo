@@ -25,6 +25,12 @@ public class TodoController {
         return todoService.findAll();
     }
 
+    @GetMapping("/user/{username}/todo/{id}")
+    public Todo getTodo (@PathVariable String username ,@PathVariable Long id){
+//        return todoRepository.findAll();
+        return todoService.findById(id);
+    }
+
     @DeleteMapping("/user/{username}/todo/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username , @PathVariable long id){
 

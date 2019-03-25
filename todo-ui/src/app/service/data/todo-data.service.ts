@@ -16,9 +16,13 @@ export class TodoDataService {
      console.log("retrieveAllTodos at todo data service");
   }
 
-
   deleteTodo(username : string, id : number){
     return this.http.delete(`http://localhost:8080/user/${username}/todo/${id}`)
+     console.log("deleteTodo at todo data service");
+  }
+
+  retrieveTodo(username : string, id : number){
+    return this.http.get<Todo>(`http://localhost:8080/user/${username}/todo/${id}`)
      console.log("deleteTodo at todo data service");
   }
 
