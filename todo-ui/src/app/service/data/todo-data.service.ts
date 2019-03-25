@@ -17,12 +17,14 @@ export class TodoDataService {
   }
 
 
-  deleteTodo(username , id){
+  deleteTodo(username : string, id : number){
     return this.http.delete(`http://localhost:8080/user/${username}/todo/${id}`)
      console.log("deleteTodo at todo data service");
   }
 
 
-
-
+  updateTodo(username: string, id : number) {
+    // return this.http.put(`http://localhost:8080/user/${username}/todo/${id}`)
+    console.log("deleteTodo at todo data service");
+  }
 }
