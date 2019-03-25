@@ -57,7 +57,7 @@ public class TodoController {
         return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
 
-    @PostMapping("/user/{username}/todo/{id}")
+    @PostMapping("/user/{username}/todo")
     public ResponseEntity<Void> addTodo(
             @PathVariable String username,
             @RequestBody Todo todo

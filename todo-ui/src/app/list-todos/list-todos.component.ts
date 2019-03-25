@@ -98,4 +98,9 @@ export class ListTodosComponent implements OnInit {
   //   )
   }
 
+  addTodo() {
+
+    console.log('Add Todo with id : ' + -1);
+    this.router.navigate(['todos' ,-1]);
+  }
 }
