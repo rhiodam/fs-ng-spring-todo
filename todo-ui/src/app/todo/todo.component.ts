@@ -15,7 +15,8 @@ export class TodoComponent implements OnInit {
 
   constructor(
     private todoService: TodoDataService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -24,12 +25,18 @@ export class TodoComponent implements OnInit {
     this.todoService.retrieveTodo('rhioda',this.id).subscribe(
       response => {
         console.log(response);
-        this.todo = response;
+        //casting in java
+        this.todo = <Todo>response;
       }
     )
   }
 
   saveTodo() {
-
+    this.todoService.updateTodo('rhioda',this.id , this.todo).subscribe(
+      response => {
+        console.log(response);
+        //this.todo = response;
+      }
+    )
   }
 }

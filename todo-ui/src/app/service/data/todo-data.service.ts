@@ -7,28 +7,29 @@ import {HttpClient} from "@angular/common/http";
 })
 export class TodoDataService {
 
-  constructor(
-    private http:HttpClient
-  ) { }
+  constructor(private http:HttpClient) {
+  }
 
-  retrieveAllTodos(username){
+  retrieveAllTodos(username) {
     return this.http.get<Todo[]>(`http://localhost:8080/user/${username}/todo`)
-     console.log("retrieveAllTodos at todo data service");
+    console.log("retrieveAllTodos at todo data service");
   }
 
-  deleteTodo(username : string, id : number){
+  deleteTodo(username:string, id:number) {
     return this.http.delete(`http://localhost:8080/user/${username}/todo/${id}`)
-     console.log("deleteTodo at todo data service");
+    console.log("deleteTodo at todo data service");
   }
 
-  retrieveTodo(username : string, id : number){
+  retrieveTodo(username:string, id:number) {
     return this.http.get<Todo>(`http://localhost:8080/user/${username}/todo/${id}`)
-     console.log("deleteTodo at todo data service");
+    console.log("deleteTodo at todo data service");
   }
 
 
-  updateTodo(username: string, id : number) {
-    // return this.http.put(`http://localhost:8080/user/${username}/todo/${id}`)
+  updateTodo(username, id, todo) {
+    return this.http.put(
+      `http://localhost:8080/user/${username}/todo/${id}`,
+      todo);
     console.log("deleteTodo at todo data service");
   }
 }
