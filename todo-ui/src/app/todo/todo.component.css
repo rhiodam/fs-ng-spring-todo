@@ -1,0 +1,8 @@
+/*tuts*/
+.ng-invalid:not(form) {
+  border-left: 5px solid red;
+}
+
+/*.ng-invalid input{*/
+  /*border-left: 5px solid red;*/
+/*}*/
