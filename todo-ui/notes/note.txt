@@ -259,6 +259,12 @@ TodoComponent.html:10 ERROR TypeError: Cannot read property 'description' of und
 
 
 
+step 74
+
+Access to XMLHttpRequest at 'http://localhost:8080/user/rhioda/todo' from origin 'http://localhost:4200'
+has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does
+not have HTTP ok status.
+
 
 
 

@@ -84,12 +84,12 @@ export class WelcomeComponent implements OnInit {
 
   handleSuccessfulResponse(response){
     this.messageFromService = response.message;
-    console.log(response);
+    console.log('response : ' + response);
     console.log(response.message);
   }
 
-  private handleErrorResponse(error: any) {
-    console.log(error);
+  handleErrorResponse(error: any) {
+    console.log('error : ' + error);
     console.log(error.error.message);
     this.messageFromService = error.error.message;
   }
