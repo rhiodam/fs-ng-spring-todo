@@ -54,12 +54,12 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           console.log('data : ' + (data));
-          console.log(this.username + ' ' + this.password)
+          console.log('handleBasicAuthLogin : ' + this.username + ' ' + this.password)
           this.router.navigate(['welcome', this.username]);
           this.invalidLogin = false;
         },
         error => {
-          console.log('error : ' + (error));
+          console.log('error handleBasicAuthLogin : ' + (error) + this.username + this.password);
           this.invalidLogin = true;
         }
       )
