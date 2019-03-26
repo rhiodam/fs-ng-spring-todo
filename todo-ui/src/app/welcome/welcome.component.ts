@@ -84,12 +84,12 @@ export class WelcomeComponent implements OnInit {
 
   handleSuccessfulResponse(response){
     this.messageFromService = response.message;
-    console.log('response : ' + response);
+    console.log('response excuteHelloWorldBeanServiceWithPathVariable : ' + response);
     console.log(response.message);
   }
 
   handleErrorResponse(error: any) {
-    console.log('error : ' + error);
+    console.log('error excuteHelloWorldBeanServiceWithPathVariable : ' + error);
     console.log(error.error.message);
     this.messageFromService = error.error.message;
   }
