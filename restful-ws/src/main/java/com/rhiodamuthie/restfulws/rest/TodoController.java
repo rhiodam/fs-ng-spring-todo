@@ -54,6 +54,7 @@ public class TodoController {
     ) {
 //        return todoRepository.findAll();
         Todo save = todoService.save(todo);
+        todoRepository.save(todo);
         return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
 
@@ -64,6 +65,7 @@ public class TodoController {
     ) {
 
         Todo createdTodo = todoService.save(todo);
+        todoRepository.save(todo);
 
         if (createdTodo.getId() == null) {
 //            204
