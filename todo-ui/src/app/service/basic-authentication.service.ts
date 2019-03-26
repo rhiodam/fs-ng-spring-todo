@@ -54,18 +54,20 @@ export class BasicAuthenticationService {
   //
   // }
 
-  // isUserLoggedIn() {
-  //   let user = sessionStorage.getItem('authenticatedUser');
-  //   return !(user === null)
-  // }
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('authenticatedUser');
+    return !(user === null)
+  }
 
   getAuthenticatedUser() {
     return sessionStorage.getItem('authenticatedUser');
   }
 
   getAuthenticatedToken() {
-    if (this.getAuthenticatedUser()) 
-    return sessionStorage.getItem('authenticatedUser');
+    if (this.getAuthenticatedUser()) {
+      return sessionStorage.getItem('authenticatedUser');
+    }
+
   }
 
   logout() {
