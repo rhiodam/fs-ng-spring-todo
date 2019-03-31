@@ -10,6 +10,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {WelcomeDataService} from "../service/data/welcome-data.service";
+import {BasicAuthenticationService} from "../service/basic-authentication.service";
 
 // here we import from our custome component
 // import {AppComponent} from '../app.component';
@@ -30,6 +31,7 @@ export class WelcomeComponent implements OnInit {
   message = 'Some Welcome Message';
   messageFromService :string;
   name = '';
+  username: string = this.basicAuthenticationService.getAuthenticatedUser();
 
   // TS
   // message :  string = 'Some Welcome Message';
@@ -41,13 +43,14 @@ export class WelcomeComponent implements OnInit {
   // ActivatedRoute
   constructor(
     private route:ActivatedRoute,
-    private welcomeService:WelcomeDataService
+    private welcomeService:WelcomeDataService,
+    private basicAuthenticationService:BasicAuthenticationService
   ) { }
 
   ngOnInit() {
 
     // console.log(this.message);
-    console.log(this.route.snapshot.params['name']);
+    console.log("this.route.snapshot.params['name'] : "+this.route.snapshot.params['name']);
     this.name = this.route.snapshot.params['name'];
   }
 
@@ -66,20 +69,23 @@ export class WelcomeComponent implements OnInit {
 
     console.log("after use service");
   }
+
   getWelcomeMessageWithPathVariable() {
     // this.welcomeService.excuteHelloWorldBeanService();
     // this.welcomeService.excuteHelloWorldBeanService();
     // console.log("inside getWelcomeMessage method")
-    console.log(this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable(this.name));
+    // console.log('this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable :'+(this.name));
+    console.log('this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable :'+(this.username));
 
     // async
-    this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable(this.name).subscribe(
+    // this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable(this.name).subscribe(
+    this.welcomeService.excuteHelloWorldBeanServiceWithPathVariable(this.username).subscribe(
       // response =>console.log(response.message)
       response =>this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
     );
 
-    console.log("after use service");
+    console.log("after use service getWelcomeMessageWithPathVariable");
   }
 
   handleSuccessfulResponse(response){

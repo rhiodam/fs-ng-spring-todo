@@ -35,7 +35,7 @@ export class TodoDataService {
 
   addTodo(username, todo) {
     return this.http.post(
-      `http://localhost:8080/user/${username}/todo`,
+      `${API_URL}/user/${username}/todo`,
       todo);
     console.log("addTodo at todo data service");
   }

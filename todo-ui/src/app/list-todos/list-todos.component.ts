@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {TodoDataService} from "../service/data/todo-data.service";
 import {Router} from "@angular/router";
+import {BasicAuthenticationService} from "../service/basic-authentication.service";
 
 
 export class Todo {
-  constructor(public id: number,
-              public description: string,
-              public done: boolean,
-              public targetDate: Date) {
+  constructor(public id:number,
+              public description:string,
+              public done:boolean,
+              public targetDate:Date) {
 
 
   }
@@ -19,10 +20,13 @@ export class Todo {
 })
 export class ListTodosComponent implements OnInit {
 
-  todos : Todo[];
+  todos:Todo[];
 
   deleteMessage:string;
   updateMessage:string;
+
+  username:string = this.basicAuthenticationService.getAuthenticatedUser();
+;
 
   //todos3 = [
   //  new Todo(1, 'Learn Angular', false, new Date()),
@@ -54,29 +58,37 @@ export class ListTodosComponent implements OnInit {
   //   description: 'Learn Angular'
   // }
 
-  constructor(
-    private todoService:TodoDataService,
-    private router:Router
-  ) {
+  constructor(private todoService:TodoDataService,
+              private router:Router,
+              private basicAuthenticationService:BasicAuthenticationService) {
   }
 
   ngOnInit() {
     this.refreshTodos();
   }
 
-  refreshTodos(){
-    this.todoService.retrieveAllTodos('rhioda').subscribe(
+  refreshTodos() {
+
+    let username = this.basicAuthenticationService.getAuthenticatedUser();
+    // this.todoService.retrieveAllTodos('rhioda').subscribe(
+    this.todoService.retrieveAllTodos(username).subscribe(
       response => {
-        console.log(response);
+        console.log('retrieveAllTodos : ' + response);
+        console.log('retrieveAllTodos : ' + this.username);
         this.todos = response;
+      },
+      error => {
+        console.log(error);
+        console.log('error retrieveAllTodos : ' + this.username);
+        // this.todos = response;
       }
     )
   }
 
-  deleteTodo(id){
+  deleteTodo(id) {
 
     console.log(id);
-    this.todoService.deleteTodo('rhioda',id).subscribe(
+    this.todoService.deleteTodo(this.username, id).subscribe(
       response => {
         console.log(response);
         this.deleteMessage = `Delete todo of id : ${id} success`;
@@ -85,22 +97,22 @@ export class ListTodosComponent implements OnInit {
     )
   }
 
-  updateTodo(id){
+  updateTodo(id) {
 
     console.log('Update Todo with id : ' + id);
-    this.router.navigate(['todos' ,id]);
-  //   this.todoService.updateTodo('rhioda',id).subscribe(
-  //     response => {
-  //       console.log(response);
-  //       this.updateMessage = `Update todo of id : ${id} success`;
-  //       this.refreshTodos();
-  //     }
-  //   )
+    this.router.navigate(['todos', id]);
+    //   this.todoService.updateTodo('rhioda',id).subscribe(
+    //     response => {
+    //       console.log(response);
+    //       this.updateMessage = `Update todo of id : ${id} success`;
+    //       this.refreshTodos();
+    //     }
+    //   )
   }
 
   addTodo() {
 
     console.log('Add Todo with id : ' + -1);
-    this.router.navigate(['todos' ,-1]);
+    this.router.navigate(['todos', -1]);
   }
 }
